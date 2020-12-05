@@ -2,7 +2,7 @@
 
 ![Rust](https://img.shields.io/badge/language-Rust-DEA584.svg?style=flat-square)
 [![GitHub license](https://img.shields.io/github/license/Hambaka/golden_sun_password_converter?style=flat-square)](https://raw.githubusercontent.com/Hambaka/golden_sun_password_converter/master/LICENSE)
-![Version](https://img.shields.io/github/v/release/Hambaka/golden_sun_password_converter?label=version&style=flat-square)
+[![Version](https://img.shields.io/github/v/release/Hambaka/golden_sun_password_converter?label=version&style=flat-square)](https://github.com/Hambaka/golden_sun_password_converter/releases/latest)
 
 Golden Sun password converter (English -> Japanese, Japanese -> English)
 
