@@ -33,9 +33,7 @@ fn main() {
   // If "output.txt" was already existed, clear all content in the file and write converted password.
   // If not, create file and write converted password.
   let mut output_file = std::fs::File::create("output.txt").expect("Create \"output.txt\" failed!");
-
   output_file.write_all(converted_password.as_bytes()).expect("Write to \"output.txt\" failed!");
-
   println!("Conversion is completed! Please check out \"output.txt\".");
 }
 
