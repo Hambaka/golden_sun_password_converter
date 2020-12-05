@@ -1,13 +1,15 @@
 # golden_sun_password_converter
 
-![Rust](https://img.shields.io/badge/language-Rust-blueviolet.svg?style=flat-square)
+![Rust](https://img.shields.io/badge/language-Rust-DEA584.svg?style=flat-square)
+[![GitHub license](https://img.shields.io/github/license/Hambaka/golden_sun_password_converter?style=flat-square)](https://raw.githubusercontent.com/Hambaka/golden_sun_password_converter/master/LICENSE)
+![Version](https://img.shields.io/github/v/release/Hambaka/golden_sun_password_converter?label=version&style=flat-square)
 
 Golden Sun password converter (English -> Japanese, Japanese -> English)
 
 ## What's this?
 
 A really simple tool for two Game Boy Advance games, Golden Sun (黄金の太陽 開かれし封印) and Golden Sun: The Lost Age (黄金の太陽 失われし時代).
-If you clear Golden Sun, you can get password of your clear data, and you can transfer your game data to Golden Sun: The Lost Age by inputting password.
+If you clear Golden Sun, you can get password of your clear data, and you can transfer your game data to Golden Sun: The Lost Age by inputting password.  
 Japanese version password and English version password ***looks different***, but they are ***actually identical***. Sometimes maybe you want to convert your password to another version because of some reasons.
 
 
