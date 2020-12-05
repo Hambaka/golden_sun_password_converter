@@ -14,6 +14,8 @@ Japanese version password and English version password ***looks different***, bu
 ## Usage
 
 Put the binary file and a text file called `input.txt` that contains Golden Sun password in the same folder, then run binary. It will output `output.txt` in the same folder.
+- If input file is English version, then output file is Japanese version.
+- If input file is Japanese version, then output file is English version.
 
 **Note: The encoding of `input.txt` must be `UTF-8`.**
 
