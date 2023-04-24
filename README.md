@@ -12,9 +12,11 @@ Date: 2023/4/24
 
 `golden_sun_password_converter` is now a **deprecated** tool.  For converting password(text file) to another version, please check [golden_sun_password_exporter](https://github.com/Hambaka/golden_sun_password_exporter) repo.  
 You can use its `txt` subcommand to convert password:  
-`golden_sun_password_exporter txt --text <INPUT_TEXT_FILE>`  
-or  
-`golden_sun_password_exporter txt -t <INPUT_TEXT_FILE>`  
+```shell
+golden_sun_password_exporter txt --text <INPUT_TEXT_FILE>
+# Or you can use this one ↓
+golden_sun_password_exporter txt -t <INPUT_TEXT_FILE>
+```
 By default, it will create a folder with the same name as the input file and add `_output` to the end of the folder name, and finally place the converted file `password.txt` in the folder.
 
 ## What's this?
