@@ -7,9 +7,9 @@ enum SaveType {
   Japanese,
 }
 
-/// Golden Sun password converter (English -> Japanese, Japanese -> English)
-/// Hambaka <readeryoshi@gmail.com>
-/// Port Java version to Rust version with help from my friend "Flat Bartender", a huge thanks to him!
+/* Golden Sun password converter (English -> Japanese, Japanese -> English)
+   Hambaka
+   Port Java version to Rust version with help from my friend "Flat Bartender", a huge thanks to him! */
 fn main() {
   let mut input_file = File::open("input.txt").expect("An error happened while opening input.txt");
   let mut password = String::new();
@@ -21,23 +21,23 @@ fn main() {
     return;
   }
 
-  // Get converted password.
-  // If input file is English version, then output file is Japanese version.
-  // If input file is Japanese version, then output file is English version.
+  /* Get converted password.
+     If input file is English version, then output file is Japanese version.
+     If input file is Japanese version, then output file is English version. */
   let converted_password: String = match get_save_type(password.as_ref()) {
     SaveType::English => password.chars().map(convert_en_to_jp).collect(),
     SaveType::Japanese => password.chars().map(convert_jp_to_en).collect(),
   };
 
-  // After converting, the result is "output.txt" in the same folder.
-  // If "output.txt" was already existed, clear all content in the file and write converted password.
-  // If not, create file and write converted password.
-  let mut output_file = std::fs::File::create("output.txt").expect("Create \"output.txt\" failed!");
+  /* After converting, the result is "output.txt" in the same folder.
+     If "output.txt" was already existed, clear all content in the file and write converted password.
+     If not, create file and write converted password. */
+  let mut output_file = File::create("output.txt").expect("Create \"output.txt\" failed!");
   output_file.write_all(converted_password.as_bytes()).expect("Write to \"output.txt\" failed!");
   println!("Conversion is completed! Please check out \"output.txt\".");
 }
 
-/// Convert English version password (letters, numbers, signs) to Japanese version password (hiragana).
+// Convert English version password (letters, numbers, signs) to Japanese version password (hiragana).
 fn convert_en_to_jp(input: char) -> char {
   match input {
     'A' => 'あ',
@@ -119,11 +119,13 @@ fn convert_en_to_jp(input: char) -> char {
     '+' => 'べ',
 
     '=' => 'ぼ',
+
+    ' ' => '　',
     _ => input,
   }
 }
 
-/// Convert Japanese version password (hiragana) to English version password (letters, numbers, signs).
+// Convert Japanese version password (hiragana) to English version password (letters, numbers, signs).
 fn convert_jp_to_en(input: char) -> char {
   match input {
     'あ' => 'A',
@@ -203,13 +205,15 @@ fn convert_jp_to_en(input: char) -> char {
     'ぶ' => '%',
     'べ' => '+',
     'ぼ' => '=',
+
+    '　' => ' ',
     _ => input,
   }
 }
 
-/// Very stupid and lazy way to detect content (English version password or Japanese version password).
-/// By comparing first char to 'z' in ASCII. Because 'z' is the "largest" char in English version password.
-/// If the first char is larger than 'z', then it is Japanese version password, since Japanese version password are all hiragana.
+/* Very stupid and lazy way to detect content (English version password or Japanese version password).
+   By comparing first char to 'z' in ASCII. Because 'z' is the "largest" char in English version password.
+   If the first char is larger than 'z', then it is Japanese version password, since Japanese version password are all hiragana. */
 fn get_save_type(password: &str) -> SaveType {
   let first_char = password.chars().nth(0).unwrap();
   if first_char <= 'z' {

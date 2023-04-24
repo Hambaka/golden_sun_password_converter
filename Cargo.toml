@@ -1,9 +1,16 @@
 [package]
 name = "golden_sun_password_converter"
-version = "0.1.0"
-authors = ["hambaka"]
-edition = "2018"
+version = "0.1.1"
+authors = ["Hambaka"]
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+# https://github.com/johnthagen/min-sized-rust
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
