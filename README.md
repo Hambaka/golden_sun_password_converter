@@ -1,42 +1,47 @@
-# golden_sun_password_converter
+# README
+[![zh-Hans](https://img.shields.io/badge/-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-black.svg?style=for-the-badge&logo=googletranslate&logoColor=yellow)](https://github.com/Hambaka/golden_sun_password_converter/blob/main/README.md)
+[![en-US](https://img.shields.io/badge/-English-black.svg?style=for-the-badge&logo=googletranslate&logoColor=yellow)](https://github.com/Hambaka/golden_sun_password_converter/blob/main/README.en-US.md)
+---
+# golden_sun_password_converter （已过时）
 
-![Rust](https://img.shields.io/badge/language-Rust-DEA584.svg?style=flat-square)
+![Rust](https://img.shields.io/badge/language-Rust-DEA584.svg?style=flat-square&logo=rust)
 [![GitHub license](https://img.shields.io/github/license/Hambaka/golden_sun_password_converter?style=flat-square)](https://raw.githubusercontent.com/Hambaka/golden_sun_password_converter/master/LICENSE)
-[![Version](https://img.shields.io/github/v/release/Hambaka/golden_sun_password_converter?label=version&style=flat-square)](https://github.com/Hambaka/golden_sun_password_converter/releases/latest)
+![Platform](https://img.shields.io/badge/platform%20(x86--64)-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)
+[![Version](https://img.shields.io/github/v/release/Hambaka/golden_sun_password_converter?label=version&style=flat-square)](https://github.com/Hambaka/golden_sun_password_converter/releases/latest)  
+ 
+　　黄金太阳密码文本转换工具（英文转日文，日文转英文）  
 
-Golden Sun password converter (English -> Japanese, Japanese -> English)
+## 重要提示
 
-## Important note
+日期：2023 年 4 月 24 日  
 
-Date: 2023/4/24  
-
-`golden_sun_password_converter` is now a **deprecated** tool.  For converting password(text file) to another version, please check [golden_sun_password_exporter](https://github.com/Hambaka/golden_sun_password_exporter) repo.  
-You can use its `txt` subcommand to convert password:  
+　　本仓库提供的 `golden_sun_password_converter` 已是**过时**的工具，如果要转换密码文本到另外一个版本，请见 [golden_sun_password_exporter](https://github.com/Hambaka/golden_sun_password_exporter) 仓库提供的程序。  
+　　可以使用其子命令 `txt` 来转换密码文本的版本：  
 ```shell
-golden_sun_password_exporter txt --text <INPUT_TEXT_FILE>
-# Or you can use this one ↓
-golden_sun_password_exporter txt -t <INPUT_TEXT_FILE>
+golden_sun_password_exporter txt --text <要转换的密码文本文件>
+# 或者也可以使用下面的格式 ↓
+golden_sun_password_exporter txt -t <要转换的密码文本文件>
 ```
-By default, it will create a folder with the same name as the input file and add `_output` to the end of the folder name, and finally place the converted file `password.txt` in the folder.
+　　默认情况下，程序会创建一个新的文件夹，文件夹的名字是输入的文本文件名+ `_output` ，并将转换好的密码文本文件存储在该文件夹中。  
 
-## What's this?
+## 这是啥玩意儿？
 
-A really simple tool for two Game Boy Advance games, Golden Sun (黄金の太陽 開かれし封印) and Golden Sun: The Lost Age (黄金の太陽 失われし時代).
-If you clear Golden Sun, you can get password of your clear data, and you can transfer your game data to Golden Sun: The Lost Age by inputting password.  
-Japanese version password and English version password ***looks different***, but they are ***actually identical***. Sometimes maybe you want to convert your password to another version because of some reasons.
+　　一个简单到不能再简单的小工具，主要用于 GBA 上的《黄金太阳》系列的两个游戏，也就是《黄金太阳 开启的封印》和《黄金太阳 失落的时代》。  
+　　如果通关了《黄金太阳 开启的封印》，可以获得通关存档的密码，并能在其续作《黄金太阳 失落的时代》中输入获得的密码来继承游戏数据。  
+　　日文版的密码和英文版的密码看上去***不同***，但本质上是完全***相同***的。有时候玩家可能会有转换密码版本的需求。  
 
 
-## Usage
+## 那该咋用呢？
 
-Put the binary file and a text file called `input.txt` that contains Golden Sun password in the same folder, then run binary. It will output `output.txt` in the same folder.
-- If input file is English version, then output file is Japanese version.
-- If input file is Japanese version, then output file is English version.
+　　将程序以及一个文件名为 `input.txt` 的密码文本文件放在同一个文件夹下，然后运行程序即可，转换好的文件 `output.txt` 也会输出在同一文件夹下。  
+- 若输入的密码文本文件是英文版密码，则输出的密码文本文件是日文版密码。  
+- 若输入的密码文本文件是日文版密码，则输出的密码文本文件是英文版密码。  
 
-**Note: The encoding of `input.txt` must be `UTF-8`.**
+**注意事项：`input.txt` 的编码必须是 `UTF-8`！**  
 
-## Example
+## 来个示例呗？
 
-Example `input.txt` (English version password as source)
+用于演示的 `input.txt` 文件  
 
 ```
 w$wZZ P!Vm#
@@ -72,7 +77,7 @@ Ni=gT XPxW#
 tJr3x Md7uJ
 ```
 
-`output.txt` (result is Japanese version password)
+`output.txt` （输出结果是日文版密码）  
 
 ```
 じびじねね せだとわど
